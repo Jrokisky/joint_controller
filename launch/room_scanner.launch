@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find dynamixel_workbench_controllers)/launch/position_control.launch">
+    <arg name="baud_rate" value="1000000"/>
+  </include>
+
+  <node name="joint_controller" pkg="joint_controller" type="joint_controller" output="screen">
+    <param name="unit" value="rad"/>
+    <param name="goal_pos_inc" value=".1"/>  
+    <param name="max_rad" value="2.6"/>
+  </node>
+
+</launch>
