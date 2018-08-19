@@ -20,13 +20,15 @@ int main(int argc, char** argv) {
   float goal_pos_inc = nh.param<float>("goal_pos_inc", 0.0);
   // Maximum rotation.
   float max_rad = nh.param<float>("max_rad", 0.0);
+  // Dynamixel Id.
+  int id = nh.param<int>("dynamixel_id", 0);
 
   ros::Rate r(1);
   while (ros::ok()) 
   {
     dynamixel_workbench_msgs::JointCommand joint_command;
     joint_command.request.unit = unit;
-    joint_command.request.id = 1;
+    joint_command.request.id = id;
     joint_command.request.goal_position = goal_position;
 
     if (joint_command_client.call(joint_command))

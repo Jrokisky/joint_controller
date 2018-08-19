@@ -7,6 +7,7 @@
     <param name="unit" value="rad"/>
     <param name="goal_pos_inc" value=".1"/>  
     <param name="max_rad" value="2.6"/>
+    <param name="dynamixel_id" value="1"/>
   </node>
 
 </launch>
