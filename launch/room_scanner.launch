@@ -8,6 +8,13 @@
     <param name="goal_pos_inc" value=".1"/>  
     <param name="max_rad" value="2.6"/>
     <param name="dynamixel_id" value="1"/>
+    <param name="profile_velocity" value="50"/>
+    <param name="profile_acceleration" value="25"/>
+    <param name="rotation_rate" value="1"/>
+  </node>
+
+  <param name="robot_description" textfile="$(find joint_controller)/model/model.urdf"/>
+  <node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">
   </node>
 
 </launch>

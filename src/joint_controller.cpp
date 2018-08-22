@@ -22,8 +22,10 @@ int main(int argc, char** argv) {
   float max_rad = nh.param<float>("max_rad", 0.0);
   // Dynamixel Id.
   int id = nh.param<int>("dynamixel_id", 0);
+  // Rotation rate.
+  int rotation_rate = nh.param<int>("rotation_rate", 0);
 
-  ros::Rate r(1);
+  ros::Rate r(rotation_rate);
   while (ros::ok()) 
   {
     dynamixel_workbench_msgs::JointCommand joint_command;
